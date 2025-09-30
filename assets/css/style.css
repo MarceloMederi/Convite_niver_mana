@@ -6,13 +6,11 @@
 }
 
 body, html {
-    /* CORREÇÃO: Removido height: 100% para permitir a rolagem nativa da página */
-    /* Gradiente de Pôr do Sol Tropical */
     background: linear-gradient(
         to bottom,
-        #FF4500, /* Vermelho Laranja Intenso (Topo) */
-        #FF8C00, /* Laranja Escuro (Meio) */
-        #FFD700  /* Amarelo Dourado (Base, Areia) */
+        #FF4500,
+        #FF8C00,
+        #FFD700
     );
     font-family: 'Montserrat', sans-serif;
     color: white;
@@ -31,13 +29,7 @@ body, html {
     padding: 20px;
     max-width: 450px; 
     margin: 0 auto;
-    /* CORREÇÃO: Alterado de min-height para apenas padding-bottom para garantir espaço */
     padding-bottom: 50px; 
-    
-    /* CORREÇÃO: Removidas as propriedades flex para permitir rolagem de conteúdo longo */
-    /* display: flex; */ 
-    /* flex-direction: column; */
-    /* justify-content: space-around; */ 
     
     position: relative;
     z-index: 2; 
@@ -197,21 +189,9 @@ footer {
 /* --- DECORAÇÕES (Imagens de Fundo) --- */
 /* -------------------------------------- */
 
-/* Coqueiro (ajustado para o caminho 'assets/img/') */
-.coqueiro-topo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 30vh;
-    background: url('../img/lugar-de-ferias-tropicais-removebg-preview.png') no-repeat top center / cover; 
-    opacity: 0.8;
-    z-index: 1; 
-}
-
-/* Flamingo (ajustado para o caminho 'assets/img/') */
+/* Flamingo (canto inferior direito) */
 .flamingo {
-    position: absolute;
+    position: fixed; /* Usar fixed para que fique sempre visível */
     bottom: 0;
     right: 20px;
     width: 25vw; 
@@ -219,4 +199,50 @@ footer {
     height: 150px; 
     background: url('../img/Flamingo-Sérgio-Messias-removebg-preview.png') no-repeat center / contain; 
     z-index: 3;
+}
+
+/* NOVO: Coqueiro (canto inferior esquerdo) */
+.coqueiro-inferior {
+    position: fixed; /* Usar fixed para que fique sempre visível */
+    bottom: 0; /* Mesma altura do flamingo */
+    left: 20px; /* Posicionado no canto esquerdo */
+    width: 25vw; 
+    max-width: 150px; 
+    height: 200px; /* Ajustado para um coqueiro ser um pouco mais alto */
+    background: url('../img/lugar-de-ferias-tropicais-removebg-preview.png') no-repeat bottom center / contain; 
+    opacity: 0.8;
+    z-index: 1; 
+    transform: scaleX(-1); /* Espelha o coqueiro para parecer que está do outro lado */
+}
+
+/* NOVO: Foto Circular (canto superior esquerdo) */
+.foto-perfil {
+    position: absolute; /* Posiciona relativo ao corpo/container */
+    top: 20px; /* Espaço do topo */
+    left: 20px; /* Espaço da esquerda */
+    width: 100px; /* Tamanho da foto */
+    height: 100px; /* Deve ser igual à largura para ser um círculo perfeito */
+    border-radius: 50%; /* Faz a imagem ser um círculo */
+    background: url('../img/favicon/balloons.png') no-repeat center / cover; /* Substitua 'foto_da_vanessa.png' pela sua foto */
+    border: 5px solid #FFF000; /* Borda dourada vibrante */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 4; /* Garante que fique acima de outros elementos */
+    overflow: hidden; /* Garante que a imagem se ajuste ao círculo */
+}
+
+/* Media Queries para ajustar tamanhos em telas menores */
+@media (max-width: 768px) {
+    .foto-perfil {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 10px;
+        border-width: 3px;
+    }
+
+    .flamingo, .coqueiro-inferior {
+        width: 20vw;
+        max-width: 100px;
+        height: 120px;
+    }
 }
