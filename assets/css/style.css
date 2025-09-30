@@ -1,0 +1,138 @@
+/* Configurações básicas e fontes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    /* Gradiente de Pôr do Sol Tropical */
+    background: linear-gradient(
+        to bottom,
+        #FF4500, /* Vermelho Laranja Intenso (Topo) */
+        #FF8C00, /* Laranja Escuro (Meio) */
+        #FFD700  /* Amarelo Dourado (Base, Areia) */
+    );
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden; /* Evita barra de rolagem lateral */
+}
+
+.convite-container {
+    padding: 20px;
+    max-width: 450px; /* Limita o tamanho para simular um "story" */
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima das decorações */
+}
+
+/* --- Títulos e Destaques --- */
+.titulo-principal {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #FFF;
+    text-shadow: 
+        3px 3px 0 #FF8C00, /* Sombra para profundidade */
+        0 0 10px rgba(0, 0, 0, 0.7); /* Sombra suave */
+    margin-bottom: 5px;
+}
+
+.titulo-festa {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFF;
+    text-shadow: 2px 2px #FF4500;
+}
+
+.idade {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 400;
+    color: #FFF000; /* Amarelo Vibrante */
+    text-shadow: none;
+    margin-top: 5px;
+}
+
+/* Efeito Neon/Brilho para Data/Hora */
+.destaque-neon {
+    font-weight: bold;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #FFF, 0 0 5px #FFD700; /* Brilho */
+    line-height: 1.8;
+    display: inline-block;
+}
+
+/* Informações e Corpo do Convite */
+.info-evento p, .detalhes p {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Melhora a legibilidade no fundo */
+}
+
+.detalhes {
+    margin-top: 30px;
+}
+
+.dresscode {
+    font-style: italic;
+    font-weight: bold;
+    color: #FFF000;
+}
+
+/* Rodapé e Contagem Regressiva */
+footer {
+    margin-top: 40px;
+}
+
+.contagem {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #F0E68C; /* Cor de areia */
+}
+
+.te-esperamos {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+
+/* --- Decorações (Simulação de Imagens) --- */
+
+/* Coqueiro (simulando a silhueta no topo) */
+.coqueiro-topo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    /* Usar uma imagem real de coqueiros como background-image é o ideal! */
+    background: url('coqueiros.png') no-repeat top center / cover; 
+    opacity: 0.8;
+    z-index: 1; 
+}
+
+/* Flamingo (simulando a posição na base) */
+.flamingo {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 150px; 
+    height: 150px; 
+    /* Usar uma imagem real de flamingo como background-image é o ideal! */
+    background: url('flamingo.png') no-repeat center / contain; 
+    z-index: 3;
+}
