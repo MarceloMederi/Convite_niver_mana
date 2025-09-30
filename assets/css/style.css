@@ -117,10 +117,10 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 10%;
     height: 30vh;
     /* Usar uma imagem real de coqueiros como background-image é o ideal! */
-    background: url('coqueiros.png') no-repeat top center / cover; 
+    background: url('../img/lugar-de-ferias-tropicais-removebg-preview.png') no-repeat top center / cover; 
     opacity: 0.8;
     z-index: 1; 
 }
@@ -130,9 +130,9 @@ footer {
     position: absolute;
     bottom: 0;
     right: 20px;
-    width: 150px; 
+    width: 10%; 
     height: 150px; 
     /* Usar uma imagem real de flamingo como background-image é o ideal! */
-    background: url('flamingo.png') no-repeat center / contain; 
+    background: url('../img/Flamingo-Sérgio-Messias-removebg-preview.png') no-repeat center / contain; 
     z-index: 3;
 }
