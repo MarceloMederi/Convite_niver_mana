@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tardezinha Tropical da Vanessa - 30 Anos</title>
+    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon/balloons.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="convite-container">
+    
+    <audio id="musica-convite" loop preload="auto">
+        <source src="assets/music/Pé na Areia Caipirinha Água de Coco e Cervejinha - •Dênis Songs• (youtube).mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <div id="tela-abertura">
+        <div class="card-abertura">
+            <h3 class="msg-abertura">Você recebeu um...</h3>
+            <h1 class="titulo-abertura">CONVITE</h1>
+            <button id="btn-abrir-convite">ABRIR CONVITE & PLAY</button>
+        </div>
+    </div>
+    
+    <div id="conteudo-principal" class="convite-container hidden"> 
         <header>
             <h1 class="titulo-principal">Convite Especial</h1>
             <h2 class="titulo-festa">Tardezinha da Vanessa <span class="idade">30 anos</span></h2>
@@ -20,9 +36,7 @@
             <section class="info-evento">
                 <p class="data-hora">
                     <span class="destaque-neon">29 de Novembro</span>
-                    <br>
-                    <br>
-                    <span class="destaque-neon">às 13h</span>
+                    <span class="destaque-neon horario">às 13h</span>
                 </p>
                 
                 <div class="local">

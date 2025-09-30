@@ -6,7 +6,7 @@
 }
 
 body, html {
-    height: 100%;
+    /* CORREÇÃO: Removido height: 100% para permitir a rolagem nativa da página */
     /* Gradiente de Pôr do Sol Tropical */
     background: linear-gradient(
         to bottom,
@@ -17,19 +17,31 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-align: center;
-    overflow-x: hidden; /* Evita barra de rolagem lateral */
+    overflow-x: hidden; 
+}
+
+/* Classe para esconder e adicionar transição */
+.hidden {
+    display: none !important;
+    opacity: 0 !important; 
+    transition: opacity 1s ease-in-out;
 }
 
 .convite-container {
     padding: 20px;
-    max-width: 450px; /* Limita o tamanho para simular um "story" */
+    max-width: 450px; 
     margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    /* CORREÇÃO: Alterado de min-height para apenas padding-bottom para garantir espaço */
+    padding-bottom: 50px; 
+    
+    /* CORREÇÃO: Removidas as propriedades flex para permitir rolagem de conteúdo longo */
+    /* display: flex; */ 
+    /* flex-direction: column; */
+    /* justify-content: space-around; */ 
+    
     position: relative;
-    z-index: 2; /* Garante que o conteúdo fique acima das decorações */
+    z-index: 2; 
+    opacity: 1; 
 }
 
 /* --- Títulos e Destaques --- */
@@ -38,8 +50,8 @@ body, html {
     font-size: 3em;
     color: #FFF;
     text-shadow: 
-        3px 3px 0 #FF8C00, /* Sombra para profundidade */
-        0 0 10px rgba(0, 0, 0, 0.7); /* Sombra suave */
+        3px 3px 0 #FF8C00,
+        0 0 10px rgba(0, 0, 0, 0.7);
     margin-bottom: 5px;
 }
 
@@ -55,20 +67,27 @@ body, html {
     display: block;
     font-size: 0.7em;
     font-weight: 400;
-    color: #FFF000; /* Amarelo Vibrante */
+    color: #FFF000; 
     text-shadow: none;
     margin-top: 5px;
 }
 
 /* Efeito Neon/Brilho para Data/Hora */
+.data-hora {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 .destaque-neon {
     font-weight: bold;
     font-size: 1.5em;
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 5px 10px;
+    padding: 8px 15px;
     border-radius: 5px;
-    box-shadow: 0 0 15px #FFF, 0 0 5px #FFD700; /* Brilho */
-    line-height: 1.8;
+    box-shadow: 0 0 15px #FFF, 0 0 5px #FFD700;
+    line-height: 1.2;
     display: inline-block;
 }
 
@@ -78,7 +97,7 @@ body, html {
     padding: 5px;
     font-size: 1.1em;
     font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Melhora a legibilidade no fundo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .detalhes {
@@ -100,7 +119,7 @@ footer {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #F0E68C; /* Cor de areia */
+    color: #F0E68C; 
 }
 
 .te-esperamos {
@@ -110,29 +129,94 @@ footer {
 }
 
 
-/* --- Decorações (Simulação de Imagens) --- */
+/* -------------------------------------- */
+/* --- ESTILOS DA TELA DE ABERTURA --- */
+/* -------------------------------------- */
 
-/* Coqueiro (simulando a silhueta no topo) */
+#tela-abertura {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #FF4500, 
+        #FF8C00
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: opacity 0.5s ease-out; 
+    padding: 20px;
+}
+
+.card-abertura {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.msg-abertura {
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+}
+
+.titulo-abertura {
+    font-size: 4em;
+    font-family: 'Pacifico', cursive;
+    color: #FFF000; 
+    text-shadow: 3px 3px 0 #FF4500;
+    margin-bottom: 30px;
+}
+
+#btn-abrir-convite {
+    background-color: #3CB371; 
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+#btn-abrir-convite:hover {
+    background-color: #2E8B57;
+    transform: translateY(-2px);
+}
+
+
+/* -------------------------------------- */
+/* --- DECORAÇÕES (Imagens de Fundo) --- */
+/* -------------------------------------- */
+
+/* Coqueiro (ajustado para o caminho 'assets/img/') */
 .coqueiro-topo {
     position: absolute;
     top: 0;
     left: 0;
-    width: 10%;
+    width: 100%; 
     height: 30vh;
-    /* Usar uma imagem real de coqueiros como background-image é o ideal! */
     background: url('../img/lugar-de-ferias-tropicais-removebg-preview.png') no-repeat top center / cover; 
     opacity: 0.8;
     z-index: 1; 
 }
 
-/* Flamingo (simulando a posição na base) */
+/* Flamingo (ajustado para o caminho 'assets/img/') */
 .flamingo {
     position: absolute;
     bottom: 0;
     right: 20px;
-    width: 10%; 
+    width: 25vw; 
+    max-width: 150px; 
     height: 150px; 
-    /* Usar uma imagem real de flamingo como background-image é o ideal! */
     background: url('../img/Flamingo-Sérgio-Messias-removebg-preview.png') no-repeat center / contain; 
     z-index: 3;
 }
