@@ -16,12 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Oculta a tela de abertura com transição
         telaAbertura.style.opacity = '0';
+        
+        // Remove a tela de abertura após a transição de opacidade (0.5s)
         setTimeout(() => {
             telaAbertura.classList.add('hidden');
         }, 500); 
 
-        // Mostra o conteúdo principal do convite
+        // Mostra o conteúdo principal.
+        // O CONTEÚDO AGORA APARECE SUAVEMENTE (FADE-IN) devido ao:
+        // 1. Removendo a classe 'hidden' (que tem display:none).
+        // 2. Definindo a opacidade para 1.
+        // O CSS (.convite-container) cuida da transição de 1.5s.
         conteudoPrincipal.classList.remove('hidden');
+        conteudoPrincipal.style.opacity = '1'; 
     });
 
 

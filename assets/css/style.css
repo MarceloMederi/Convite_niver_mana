@@ -33,7 +33,10 @@ body, html {
     
     position: relative;
     z-index: 2; 
-    opacity: 1; 
+    
+    /* ANIMAÇÃO DE ENTRADA: Começa invisível para o fade-in */
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
 }
 
 /* --- Títulos e Destaques --- */
@@ -170,6 +173,13 @@ footer {
     margin-bottom: 30px;
 }
 
+/* @keyframes para o botão pulsante */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(60, 179, 113, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(60, 179, 113, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(60, 179, 113, 0); }
+}
+
 #btn-abrir-convite {
     background-color: #3CB371; 
     color: white;
@@ -181,6 +191,9 @@ footer {
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    
+    /* APLICAÇÃO DA ANIMAÇÃO PULSANTE */
+    animation: pulse 2s infinite; 
 }
 
 #btn-abrir-convite:hover {
@@ -190,48 +203,58 @@ footer {
 
 
 /* -------------------------------------- */
-/* --- DECORAÇÕES (Imagens de Fundo) --- */
+/* --- DECORAÇÕES E FOTO DE PERFIL --- */
 /* -------------------------------------- */
+
+/* @keyframes para a foto flutuante */
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
 
 /* Flamingo (canto inferior direito) */
 .flamingo {
     position: fixed;
     bottom: 0;
     right: 20px;
-    width: 30vw;        /* Aumentado para 30% da tela */
-    max-width: 180px;   /* Aumentado para 180px (150 * 1.2) */
-    height: 180px;      /* Aumentado para 180px (150 * 1.2) */ 
+    width: 30vw;
+    max-width: 180px;
+    height: 180px;
     background: url('../img/1-872e4bd4-removebg-preview.png') no-repeat center / contain; 
     z-index: 3;
 }
 
-/* NOVO: Coqueiro (canto inferior esquerdo) */
+/* Coqueiro (canto inferior esquerdo) */
 .coqueiro-inferior {
-    position: fixed; /* Usar fixed para que fique sempre visível */
-    bottom: 0; /* Mesma altura do flamingo */
-    left: 20px; /* Posicionado no canto esquerdo */
+    position: fixed; 
+    bottom: 0; 
+    left: 20px;
     width: 25vw; 
     max-width: 150px; 
-    height: 200px; /* Ajustado para um coqueiro ser um pouco mais alto */
+    height: 200px;
     background: url('../img/download-removebg-preview.png') no-repeat bottom center / contain; 
     opacity: 0.8;
     z-index: 1; 
-    transform: scaleX(-1); /* Espelha o coqueiro para parecer que está do outro lado */
+    transform: scaleX(-1);
 }
 
-/* NOVO: Foto Circular (canto superior esquerdo) */
+/* Foto Circular (canto superior esquerdo) */
 .foto-perfil {
-    position: fixed; /* Posiciona relativo ao corpo/container */
-    top: 20px; /* Espaço do topo */
-    left: 20px; /* Espaço da esquerda */
-    width: 100px; /* Tamanho da foto */
-    height: 100px; /* Deve ser igual à largura para ser um círculo perfeito */
-    border-radius: 50%; /* Faz a imagem ser um círculo */
-    background: url('../img/foto.jpg') no-repeat center / cover; /* Substitua 'foto_da_vanessa.png' pela sua foto */
-    border: 5px solid #FFF000; /* Borda dourada vibrante */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: url('../img/foto.jpg') no-repeat center / cover;
+    border: 5px solid #FFF000;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    z-index: 4; /* Garante que fique acima de outros elementos */
-    overflow: hidden; /* Garante que a imagem se ajuste ao círculo */
+    z-index: 4;
+    overflow: hidden;
+    
+    /* APLICAÇÃO DA ANIMAÇÃO FLUTUANTE */
+    animation: floating 3s ease-in-out infinite; 
 }
 
 /* Media Queries para ajustar tamanhos em telas menores */
