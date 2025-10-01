@@ -221,7 +221,7 @@ footer {
 
 /* NOVO: Foto Circular (canto superior esquerdo) */
 .foto-perfil {
-    position: absolute; /* Posiciona relativo ao corpo/container */
+    position: fixed; /* Posiciona relativo ao corpo/container */
     top: 20px; /* Espaço do topo */
     left: 20px; /* Espaço da esquerda */
     width: 100px; /* Tamanho da foto */
