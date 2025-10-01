@@ -108,11 +108,14 @@ footer {
 }
 
 .contagem {
-    font-family: Montserrat;
-    font-size: 1.3em;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: #F0E68C; 
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #FFF, 0 0 5px #FFD700;
+    line-height: 1.2;
+    display: inline-block;
 }
 
 .te-esperamos {
