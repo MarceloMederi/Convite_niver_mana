@@ -6,6 +6,7 @@
 }
 
 body, html {
+    /* CORREÇÃO: Removemos altura fixa para permitir a rolagem (scroll) */
     background: linear-gradient(
         to bottom,
         #FF4500,
@@ -15,7 +16,7 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-align: center;
-    overflow-x: hidden; 
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
 }
 
 /* Classe para esconder e adicionar transição */
@@ -104,6 +105,31 @@ body, html {
     font-weight: bold;
     color: #FFF000;
 }
+
+/* --- Estilo do Botão de Localização --- */
+.btn-localizacao {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    
+    background-color: #3CB371; /* Verde tropical */
+    color: white;
+    text-decoration: none;
+    
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1em;
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-localizacao:hover {
+    background-color: #2E8B57;
+    transform: translateY(-2px);
+}
+
 
 /* Rodapé e Contagem Regressiva */
 footer {
@@ -241,11 +267,11 @@ footer {
 
 /* Foto Circular (canto superior esquerdo) */
 .foto-perfil {
-    position: fixed;
+    position: fixed; /* Fixa no canto superior mesmo com scroll */
     top: 20px;
     left: 20px;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     background: url('../img/foto.jpeg') no-repeat center / cover;
     border: 5px solid #FFF000;
