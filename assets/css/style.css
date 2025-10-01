@@ -108,6 +108,7 @@ footer {
 }
 
 .contagem {
+    font-family: Montserrat;
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 15px;
@@ -191,13 +192,13 @@ footer {
 
 /* Flamingo (canto inferior direito) */
 .flamingo {
-    position: fixed; /* Usar fixed para que fique sempre visível */
+    position: fixed;
     bottom: 0;
     right: 20px;
-    width: 25vw; 
-    max-width: 150px; 
-    height: 150px; 
-    background: url('../img/Flamingo-Sérgio-Messias-removebg-preview.png') no-repeat center / contain; 
+    width: 30vw;        /* Aumentado para 30% da tela */
+    max-width: 180px;   /* Aumentado para 180px (150 * 1.2) */
+    height: 180px;      /* Aumentado para 180px (150 * 1.2) */ 
+    background: url('../img/1-872e4bd4-removebg-preview.png') no-repeat center / contain; 
     z-index: 3;
 }
 
@@ -209,7 +210,7 @@ footer {
     width: 25vw; 
     max-width: 150px; 
     height: 200px; /* Ajustado para um coqueiro ser um pouco mais alto */
-    background: url('../img/lugar-de-ferias-tropicais-removebg-preview.png') no-repeat bottom center / contain; 
+    background: url('../img/download-removebg-preview.png') no-repeat bottom center / contain; 
     opacity: 0.8;
     z-index: 1; 
     transform: scaleX(-1); /* Espelha o coqueiro para parecer que está do outro lado */
@@ -223,7 +224,7 @@ footer {
     width: 100px; /* Tamanho da foto */
     height: 100px; /* Deve ser igual à largura para ser um círculo perfeito */
     border-radius: 50%; /* Faz a imagem ser um círculo */
-    background: url('../img/favicon/balloons.png') no-repeat center / cover; /* Substitua 'foto_da_vanessa.png' pela sua foto */
+    background: url('../img/foto.jpg') no-repeat center / cover; /* Substitua 'foto_da_vanessa.png' pela sua foto */
     border: 5px solid #FFF000; /* Borda dourada vibrante */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     z-index: 4; /* Garante que fique acima de outros elementos */
